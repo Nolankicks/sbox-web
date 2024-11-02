@@ -1,2 +1,19 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+    import PackageColumn from "$lib/components/PackageColumn.svelte";
+import { GetPackages, type SboxPackage } from "$lib/types/SboxWeb";
+    import { onMount } from "svelte";
+
+    let pkgs: SboxPackage[] = $state([]);
+
+    onMount(() => {
+        GetPackages().then((res) => {
+            if (res !== null) {
+                pkgs = res;
+            }
+        });
+    });
+</script>
+
+{#if pkgs}
+    <PackageColumn SboxPackages={pkgs} />
+{/if}

@@ -7,6 +7,12 @@ declare global {
 		// interface PageData {}
 		// interface PageState {}
 		// interface Platform {}
+
+		export interface Route {
+			href: string,
+			name: string,
+		}
+
 	}
 }
 
