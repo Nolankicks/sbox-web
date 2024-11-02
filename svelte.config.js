@@ -20,7 +20,7 @@ const config = {
             fallback: '404.html',
         }),
         paths: {
-			base: process.argv.includes('dev') ? '' : '/sveltekit-autoimport'
+			base: process.argv.includes('dev') ? '' : '/sbox-web'
 		},
         prerender: {
             handleMissingId: ({ event, resolve }) => {
