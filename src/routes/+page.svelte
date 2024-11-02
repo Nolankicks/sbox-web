@@ -1,6 +1,6 @@
 <script lang="ts">
     import PackageColumn from "$lib/components/PackageColumn.svelte";
-import { GetPackages, type SboxPackage } from "$lib/types/SboxWeb";
+    import { GetPackages, type SboxPackage } from "$lib/types/SboxWeb";
     import { onMount } from "svelte";
 
     let pkgs: SboxPackage[] = $state([]);
@@ -15,5 +15,5 @@ import { GetPackages, type SboxPackage } from "$lib/types/SboxWeb";
 </script>
 
 {#if pkgs}
-    <PackageColumn SboxPackages={pkgs} />
+    <PackageColumn title="Packages" SboxPackages={pkgs} />
 {/if}
