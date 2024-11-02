@@ -6,6 +6,6 @@
 </script>
 
 <a href="{base}/">Home</a>
-<a href="{base}browse">Browse</a>
+<a href="{base}/browse">Browse</a>
 
 {@render children()}
