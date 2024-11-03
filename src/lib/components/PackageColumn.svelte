@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { SboxPackage } from "$lib/types/SboxPackage";
+    import type { SboxPackage } from "$lib/types/SboxWeb";
     import Package from "./Package.svelte";
 
     let { SboxPackages, title }: { SboxPackages: SboxPackage[], title: string } = $props();
