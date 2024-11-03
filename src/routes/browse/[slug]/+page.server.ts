@@ -1,8 +1,13 @@
+import { GetPackages } from "$lib/types/SboxWeb";
 import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async function ({ params })
 {
-    console.log(params);
+    let res = await GetPackages();
+
+    return {
+        packages: res
+    }
 }
 
 export const prerender = true;

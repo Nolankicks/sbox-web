@@ -7,7 +7,7 @@
     import type { SboxPackage } from '$lib/types/SboxWeb';
 </script>
 
-<a href="{base}/browse" class="flex w-full">
+<a href="{base}/browse/{pkg.FullIdent}" class="flex w-full">
 	<div class="my-5 flex h-36 items-center justify-start rounded-md bg-primary p-2 w-full font-poppins text-white transition-all hover:scale-[1.01] active:scale-[0.99] flex-row">
         <div class="flex flex-col items-start justify-start w-full">
             <p class="text-lg flex">{pkg.Title}</p>
