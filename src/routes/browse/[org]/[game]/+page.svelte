@@ -6,12 +6,15 @@
     import { base } from '$app/paths';
 </script>
 
-<div class="flex flex-col mt-5">
+<div class="flex flex-col mt-5 px-5 items-center">
     {#if data.pkg}
-        <img src={data.pkg.Thumb} alt={data.pkg.Title} class="h-56 w-56 rounded-md mb-5" />
-        <div class="flex flex-col items-start justify-start w-full">
-            <p class="text-lg flex">{data.pkg.Title}</p>
-            <a href="{base}/browse/{data.pkg.Org.Ident}">{data.pkg.Org.Title}</a>
+        <div class="flex items-center gap-6 bg-alt p-4 rounded-md">
+            <div class="flex flex-col">
+                <div class="text-3xl font-bold">{data.pkg.Title}</div>
+                <div class="text-xl">From <a class="underline" href="{base}/browse/{data.pkg?.Org.Ident}">{data.pkg?.Org.Title}</a></div>
+                <div class="text-xl">Version {data.pkg.Summary}</div>
+            </div>
+            <img src={data.pkg.Thumb} alt={data.pkg.Title} class="h-32 w-32 rounded-md" />
         </div>
     {/if}
 </div>

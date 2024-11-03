@@ -6,6 +6,8 @@ export interface SboxPackage
     Summary: string;
     Thumb: string;
     Org: Org;
+    VotesUp: number;
+    VotesDown: number;
 }
 
 export interface Org

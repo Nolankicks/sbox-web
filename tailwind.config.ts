@@ -13,6 +13,7 @@ export default {
 		colors: {
 			background: 'hsl(220deg 36.84% 11.18%)',
 			primary: 'hsl(218.92deg 82.22% 55.88%)',
+			alt: '#1e2227',
 			white: 'hsl(0deg 0% 100%)',
 		}
 		

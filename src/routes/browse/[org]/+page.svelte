@@ -9,5 +9,16 @@
 </script>
 
 {#if data.packages}
-    <PackageColumn SboxPackages={data.packages} title={org?.Title} />
+    
+    {#if org}
+        <div class="w-full flex flex-col">
+            <div class="w-full p-4 text-4xl font-bold flex flex-row items-center gap-4">
+                <img src={org.Thumb} alt={org.Title} class="h-12 w-12 rounded-md" />
+                <div>{org.Title}</div>
+            </div>
+            <div class="w-full px-4 text-1xl font-bold">{org.Description}</div>
+        </div>
+    {/if}
+
+    <PackageColumn SboxPackages={data.packages} />
 {/if}
