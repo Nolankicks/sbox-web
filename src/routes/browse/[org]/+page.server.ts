@@ -1,18 +1,9 @@
 import { GetPackageList } from "$lib/types/SboxWeb";
 import type { PageServerLoad } from "./$types";
 
-export const load: PageServerLoad = async function ({ params })
+export const load: PageServerLoad = async function ({ params, url })
 {
-    let link = new URL("https://services.facepunch.com/sbox/package/find");
-    link.searchParams.set("q", `org:${params.org}`);
-
-    let res = await fetch(link.toString());
-
-    let body = await res.json();
-
-    let packages = body.Packages;
-
     return {
-        packages
+        org: params.org,
     }
 }
