@@ -4,8 +4,6 @@
     let { data } = $props();
 
     import { base } from '$app/paths';
-
-    console.log(data);
 </script>
 
 <div class="flex flex-col mt-5">
