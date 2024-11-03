@@ -29,7 +29,11 @@ const config = {
 
 			handleMissingId: ({ event, resolve }) => {
 				return;
-			}
+			},
+
+            handleHttpError: ({ event, error }) => {
+                return;
+            },
 		}
 	},
 
