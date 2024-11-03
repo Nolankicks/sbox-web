@@ -23,7 +23,8 @@ const config = {
 		prerender: {
 			entries: [
 				'/browse',
-				'/browse/[slug]',
+				'/browse/[org]',
+                '/browse/[org]/[game]',
 			],
 
 			handleMissingId: ({ event, resolve }) => {

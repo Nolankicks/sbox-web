@@ -2,7 +2,7 @@
     import type { SboxPackage } from "$lib/types/SboxWeb";
     import Package from "./Package.svelte";
 
-    let { SboxPackages, title }: { SboxPackages: SboxPackage[], title: string } = $props();
+    let { SboxPackages, title }: { SboxPackages: SboxPackage[], title?: string } = $props();
 </script>
 
 <div class="w-full text-white font-poppins my-5">

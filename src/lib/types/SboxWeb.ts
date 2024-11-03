@@ -16,7 +16,7 @@ export interface Org
     Thumb: string;
 }
 
-export const GetPackages = async function (): Promise<SboxPackage[] | null>
+export const GetPackageList = async function (): Promise<any>
 {
     let res = await fetch("https://services.facepunch.com/sbox/package/list");
 
@@ -27,7 +27,16 @@ export const GetPackages = async function (): Promise<SboxPackage[] | null>
 
     let body = await res.json();
 
-    let pkgs: SboxPackage[] = body.Groupings[0].Packages;
+    return body;
+}
 
-    return pkgs;
+export const GetPackageGroup = async function GetPackageGroup(body: any, title: string): Promise<SboxPackage[]> {
+
+    if (body == null || !body.Groupings) {
+        throw new Error("Failed to fetch packages");
+    }
+
+    return body.Groupings
+        .filter((group: any) => group.Title === title)
+        .flatMap((group: any) => group.Packages);
 }
