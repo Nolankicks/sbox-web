@@ -9,8 +9,8 @@
 
 <a href="{base}/browse/{link}" class="flex w-full">
     <div class="my-5 flex h-52 items-center justify-start rounded-md bg-primary p-2 w-full font-poppins text-white transition-all hover:scale-[1.01] active:scale-[0.99] flex-row overflow-hidden">
-        <div class="flex flex-col items-start justify-center w-full flex-shrink h-full p-6">
-            <p class="text-md flex">{pkg.Title}</p>
+        <div class="flex flex-col items-start justify-center w-full flex-shrink h-full p-6 gap-5">
+            <p class="text-xl md:text-lg font-bold flex">{pkg.Title}</p>
             {#if pkg.Org}
                 <p class="flex">{pkg.Org.Title}</p>
             {/if}
