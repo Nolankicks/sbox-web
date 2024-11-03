@@ -4,6 +4,6 @@
     let { data } = $props();
 </script>
 
-{#if data.packages}
+{#if data.packages && data.packages[0]}
     <Package SboxPackage={data.packages[0]} />
 {/if}

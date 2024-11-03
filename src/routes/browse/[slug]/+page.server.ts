@@ -9,5 +9,3 @@ export const load: PageServerLoad = async function ({ params })
         packages: res
     }
 }
-
-export const prerender = true;
