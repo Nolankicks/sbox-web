@@ -3,17 +3,9 @@
     import { GetPackages, type SboxPackage } from "$lib/types/SboxWeb";
     import { onMount } from "svelte";
 
-    let pkgs: SboxPackage[] = $state([]);
-
-    onMount(() => {
-        GetPackages().then((res) => {
-            if (res !== null) {
-                pkgs = res;
-            }
-        });
-    });
+    let { data } = $props();
 </script>
 
-{#if pkgs}
-    <PackageColumn title="Packages" SboxPackages={pkgs} />
+{#if data.packages}
+    <PackageColumn title="Packages" SboxPackages={data.packages} />
 {/if}
