@@ -1,46 +1,25 @@
 <script lang="ts">
     import DiscordEmbed from "$lib/components/DiscordEmbed.svelte";
-    import PackageColumn from "$lib/components/PackageColumn.svelte";
-    import { GetPackageGroup, GetPackageList, type SboxPackage } from "$lib/types/SboxWeb";
+import PackageColumn from "$lib/components/PackageColumn.svelte";
     import { onMount } from "svelte";
 
-    let trending: SboxPackage[] = $state([]);
-    let updated: SboxPackage[] = $state([]);
-    let featured: SboxPackage[] = $state([]);
-    let popular: SboxPackage[] = $state([]);
-
-    onMount( () => {
-        GetPackageList().then((res) => {
-            GetPackageGroup(res, "Trending").then((res) => {
-                trending = res;
-            });
-            GetPackageGroup(res, "Updated").then((res) => {
-                updated = res;
-            });
-            GetPackageGroup(res, "Featured").then((res) => {
-                featured = res;
-            });
-            GetPackageGroup(res, "Popular").then((res) => {
-                popular = res;
-            });
-        });
-    })
+    let { data } = $props();
 </script>
 
-{#if trending}
-    <PackageColumn title="Trending" SboxPackages={trending} />
+{#if data.trending}
+    <PackageColumn title="Trending" SboxPackages={data.trending} />
 {/if}
 
-{#if updated}
-    <PackageColumn title="Updated" SboxPackages={updated} />
+{#if data.updated}
+    <PackageColumn title="Updated" SboxPackages={data.updated} />
 {/if}
 
-{#if featured}
-    <PackageColumn title="Featured" SboxPackages={featured} />
+{#if data.featured}
+    <PackageColumn title="Featured" SboxPackages={data.featured} />
 {/if}
 
-{#if popular}
-    <PackageColumn title="Popular" SboxPackages={popular} />
+{#if data.popular}
+    <PackageColumn title="Popular" SboxPackages={data.popular} />
 {/if}
 
 <DiscordEmbed title="S&Box Web" />

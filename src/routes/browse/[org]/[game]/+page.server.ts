@@ -5,8 +5,13 @@ export const load: PageServerLoad = async function ({ params, url })
 {
     let ident = url.pathname.split("/").pop();
 
+    let res = await fetch( `https://services.facepunch.com/sbox/package/get/${params.org}.${ident}` );
+
+    let body = await res.json();
+
+    let pkg: SboxPackage = body;
+
     return {
-        indnt: ident,
-        org: params.org,
+        pkg
     }
 }

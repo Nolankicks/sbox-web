@@ -1,4 +1,5 @@
-export interface SboxPackage {
+export interface SboxPackage
+{
     Ident: string;
     FullIdent: string;
     Title: string;
@@ -9,37 +10,26 @@ export interface SboxPackage {
     VotesDown: number;
 }
 
-export interface Org {
+export interface Org
+{
     Ident: string;
     Title: string;
     Description: string;
     Thumb: string;
 }
 
-export const GetPackageList = async function (): Promise<any> {
+export const GetPackageList = async function (): Promise<any>
+{
     let res = await fetch("https://services.facepunch.com/sbox/package/list");
 
-    if (!res.ok) {
+    if (!res.ok)
+    {
         return null;
     }
 
     let body = await res.json();
 
     return body;
-}
-
-export const GetFindPackages = async function (query: string): Promise<SboxPackage[] | null> {
-    let res = await fetch("https://services.facepunch.com/sbox/package/find");
-
-    if (!res.ok) {
-        return null;
-    }
-
-    let body = await res.json();
-    
-    let pkgs: SboxPackage[] = body.Packages;
-
-    return pkgs;
 }
 
 export const GetPackageGroup = async function GetPackageGroup(body: any, title: string): Promise<SboxPackage[]> {
