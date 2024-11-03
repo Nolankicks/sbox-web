@@ -21,6 +21,11 @@ const config = {
 			strict: true
 		}),
 		prerender: {
+			entries: [
+				'/browse',
+				'/browse/[slug]',
+			],
+
 			handleMissingId: ({ event, resolve }) => {
 				return;
 			}
