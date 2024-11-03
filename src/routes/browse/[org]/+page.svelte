@@ -20,7 +20,7 @@ import Package from "$lib/components/Package.svelte";
             <div class="w-full px-4 text-1xl font-bold">{org.Description}</div>
         </div>
 
-        <DiscordEmbed title={org.Title} description={org.Description} />
+        <DiscordEmbed title={org.Title} description={org.Description} image={org.Thumb} />
     {/if}
 
     <PackageColumn SboxPackages={data.packages} />
