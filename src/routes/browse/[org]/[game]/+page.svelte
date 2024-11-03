@@ -4,6 +4,7 @@
     let { data } = $props();
 
     import { base } from '$app/paths';
+    import DiscordEmbed from '$lib/components/DiscordEmbed.svelte';
 </script>
 
 <div class="flex flex-col mt-5 px-5 items-center">
@@ -16,5 +17,7 @@
             </div>
             <img src={data.pkg.Thumb} alt={data.pkg.Title} class="h-32 w-32 rounded-md" />
         </div>
+
+        <DiscordEmbed title={data.pkg.Title} description="from {data.pkg.Org.Title}" />
     {/if}
 </div>

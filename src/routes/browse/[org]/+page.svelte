@@ -1,5 +1,6 @@
 <script lang="ts">
-    import Package from "$lib/components/Package.svelte";
+    import DiscordEmbed from "$lib/components/DiscordEmbed.svelte";
+import Package from "$lib/components/Package.svelte";
     import PackageColumn from "$lib/components/PackageColumn.svelte";
     import type { Org } from "$lib/types/SboxWeb";
 
@@ -18,6 +19,8 @@
             </div>
             <div class="w-full px-4 text-1xl font-bold">{org.Description}</div>
         </div>
+
+        <DiscordEmbed title={org.Title} description={org.Description} />
     {/if}
 
     <PackageColumn SboxPackages={data.packages} />

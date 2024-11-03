@@ -1,5 +1,6 @@
 <script lang="ts">
-    import PackageColumn from "$lib/components/PackageColumn.svelte";
+    import DiscordEmbed from "$lib/components/DiscordEmbed.svelte";
+import PackageColumn from "$lib/components/PackageColumn.svelte";
     import { onMount } from "svelte";
 
     let { data } = $props();
@@ -20,3 +21,5 @@
 {#if data.popular}
     <PackageColumn title="Popular" SboxPackages={data.popular} />
 {/if}
+
+<DiscordEmbed title="S&Box Web" />
