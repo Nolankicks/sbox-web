@@ -4,3 +4,5 @@ export const load: PageServerLoad = async function ({ params })
 {
     console.log(params);
 }
+
+export const prerender = true;
