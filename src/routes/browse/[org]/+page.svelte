@@ -9,5 +9,5 @@
 </script>
 
 {#if data.packages}
-    <PackageColumn SboxPackages={data.packages} title={org?.Title ?? null} />
+    <PackageColumn SboxPackages={data.packages} title={org?.Title} />
 {/if}
