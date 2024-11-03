@@ -7,7 +7,7 @@
     import DiscordEmbed from '$lib/components/DiscordEmbed.svelte';
 </script>
 
-<div class="flex flex-col mt-5 px-5 items-center">
+<div class="flex flex-col mt-5 px-5 h-screen items-center">
     {#if data.pkg}
         <div class="flex items-center gap-6 bg-alt p-2 rounded-md">
             <img src={data.pkg.Thumb} alt={data.pkg.Title} class="h-32 w-32 rounded-md" />
