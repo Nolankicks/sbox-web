@@ -8,6 +8,14 @@ export interface SboxPackage
     Org: Org;
     VotesUp: number;
     VotesDown: number;
+    Screenshots?: Screenshot[];
+    Description?: string;
+}
+
+export interface Screenshot
+{
+    Url: string;
+    IsVideo: boolean;
 }
 
 export interface Org
@@ -16,6 +24,24 @@ export interface Org
     Title: string;
     Description: string;
     Thumb: string;
+}
+
+export const GetFindPackages = async function (): Promise<SboxPackage[] | null>
+{
+    let link = new URL("https://services.facepunch.com/sbox/package/find");
+
+    let res = await fetch(link.toString());
+
+    if (!res.ok)
+    {
+        return null;
+    }
+
+    let body = await res.json();
+
+    let packages: SboxPackage[] = body.Packages;
+
+    return packages;
 }
 
 export const GetPackageList = async function (): Promise<any>

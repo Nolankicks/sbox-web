@@ -15,7 +15,7 @@ import Package from "$lib/components/Package.svelte";
         <div class="w-full flex flex-col">
             <div class="w-full p-4 text-4xl font-bold flex flex-row items-center gap-4">
                 <img src={org.Thumb} alt={org.Title} class="h-12 w-12 rounded-md" />
-                <div>{org.Title}</div>
+                <a href="https://sbox.game/{org.Ident}">{org.Title}</a>
             </div>
             <div class="w-full px-4 text-1xl font-bold">{org.Description}</div>
         </div>
